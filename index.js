@@ -8,7 +8,7 @@ const cors = require('cors')
 //use express in app variable
 const app = express()
 //define the server port
-const port = 5000
+const port = process.env.PORT || 5000
 
 //allow this app to receive incoming json request
 app.use(bodyParser.json())
@@ -21,7 +21,7 @@ app.use(function(req, res, next) {
 });
 
 //middlewares
-const {authenticated} = require('./middleware')
+const { authenticated } = require('./middleware')
 
 //import controllers
 const auth = require('./controllers/auth')
